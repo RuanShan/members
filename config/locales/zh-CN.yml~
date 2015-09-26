@@ -3,6 +3,9 @@ zh-CN:
     attributes:
       order:
         amount: "金额"
+      team:
+        name: "名称"
+        created_at: "创建时间"
       user:
 
     models:

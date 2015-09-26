@@ -1,0 +1,24 @@
+= form_for User.new, url: sales_path(), html: { multipart: true, class: "form-horizontal denser", data: { title: @page_name } } do |form|
+  %div.form-group.control-group
+    = form.label 'name', class: 'control-label col-sm-2'
+    %div.controls.col-sm-10
+      = form.text_field :name, class: 'form-control'
+      %span.help-block 必填. 最长 255.
+    %div.form-group.control-group
+    = form.label 'email', class: 'control-label col-sm-2'
+    %div.controls.col-sm-10
+      = form.text_field :email, class: 'form-control'
+      %span.help-block 必填. 最长 255.
+  %div.form-group.control-group
+    = form.label 'password', class: 'control-label col-sm-2'
+    %div.controls.col-sm-10
+      = form.password_field :password, class: 'form-control'
+      %span.help-block 必填. 最长 6-128.
+  %div.form-group.control-group
+    = form.label 'notes', class: 'control-label col-sm-2'
+    %div.controls.col-sm-10
+      = form.text_area :notes, class: 'form-control'
+      %span.help-block 可选. 
+    %div.form-group.form-actions
+    %div.col-sm-offset-2.col-sm-10
+      = form.button t('admin.form.save'), class: 'btn btn-primary'

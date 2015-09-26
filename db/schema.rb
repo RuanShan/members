@@ -145,7 +145,7 @@ ActiveRecord::Schema.define(version: 20150924092549) do
     t.integer  "division_id"
     t.string   "name",           limit: 50
     t.string   "logo_url"
-    t.string   "manager",        limit: 100,                          null: false
+    t.string   "manager",        limit: 100
     t.string   "ballpark",       limit: 100
     t.string   "mascot",         limit: 100
     t.integer  "founded"

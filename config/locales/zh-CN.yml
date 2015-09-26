@@ -2,13 +2,31 @@ zh-CN:
   activerecord:
     attributes:
       credit:
+        id: "#"
+        user: "会员"
+        user_id: "会员"
         amount: "金额"
+        notes: "备注"
+        created_at: "创建时间"
+      team:
+        name: "名称"
+        created_at: "创建时间"
       user:
-
+        id: "#"
+        name: "名字"
+        email: "电子邮箱"
+        team: "部门"
+        password: "密码"
+        password_confirmation: "密码确认"
+        notes: "备注"
+        created_at: "创建时间"
     models:
+      team:
+        one: "部门"
+        other: "部门"
       user:
-        one: "用户"
-        other: "用户"
+        one: "会员"
+        other: "会员"
       credit:
         one: "充值记录"
         other: "充值记录"
@@ -58,7 +76,7 @@ zh-CN:
         breadcrumb: "新建"
         done: "已创建"
         link: "新建%{model_label}"
-        menu: "创建新条目"
+        menu: "添加"
         title: "新建%{model_label}"
       show:
         breadcrumb: "%{object_label}"
@@ -66,6 +84,8 @@ zh-CN:
         title: "%{model_label} '%{object_label}'详情"
       show_in_app:
         menu: "在应用程序中显示"
+      sale: "销售管理"
+      new_sale: "销售管理"
     export:
       click_to_reverse_selection: "单击以反向选择"
       confirmation: "以 %{name} 格式导出"
@@ -125,6 +145,7 @@ zh-CN:
       search: "搜索"
       show_all: "显示全部"
       up: "上"
+      big_sale: "年费销售"
     table_headers:
       changes: "改动"
       created_at: "日期/时间"

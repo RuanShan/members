@@ -8,7 +8,9 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   #attr_accessible :email, :password, :password_confirmation, :remember_me, :roles, :avatar
   has_and_belongs_to_many :roles
+  belongs_to :team, :inverse_of => :players
 
+  validates_presence_of(:name)
   # Add Paperclip support for avatars
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
 

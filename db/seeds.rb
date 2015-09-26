@@ -10,7 +10,7 @@ player_model   = RailsAdmin::AbstractModel.new(Player)
 admin_role = role_model.new( name: 'admin')
 admin_role.save
 role_model.new( name: 'player').save
-user_model.new(:name=>'admin', :email => 'username@example.com', :password => 'password', :password_confirmation => 'password', :roles=>[ admin_role ]).save
+user_model.new(:name=>'admin', :email => 'admin@example.com', :password => 'password', :password_confirmation => 'password', :roles=>[ admin_role ]).save
 
 #MLB::Team.all.each do |mlb_team|
 #  unless league = league_model.where(:name => mlb_team.league).first

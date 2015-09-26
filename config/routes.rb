@@ -1,3 +1,8 @@
+RailsAdmin::Engine.routes.draw do
+  resource :sales do
+  end
+end
+
 DummyApp::Application.routes.draw do
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   devise_for :users

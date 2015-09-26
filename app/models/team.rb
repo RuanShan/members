@@ -2,13 +2,13 @@
 
 
 class Team < ActiveRecord::Base
-  validates_numericality_of :division_id, :only_integer => true
-  validates_presence_of :manager
-  validates_numericality_of :founded, :only_integer => true
-  validates_numericality_of :wins, :only_integer => true
-  validates_numericality_of :losses, :only_integer => true
-  validates_numericality_of :win_percentage
-  validates_numericality_of :revenue, :allow_nil => true
+  #validates_numericality_of :division_id, :only_integer => true
+  #validates_presence_of :manager
+  #validates_numericality_of :founded, :only_integer => true
+  #validates_numericality_of :wins, :only_integer => true
+  #validates_numericality_of :losses, :only_integer => true
+  #validates_numericality_of :win_percentage
+  #validates_numericality_of :revenue, :allow_nil => true
 
   belongs_to :division
   has_many :players, :inverse_of => :team
