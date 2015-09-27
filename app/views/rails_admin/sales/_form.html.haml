@@ -1,24 +1,65 @@
-= form_for User.new, url: sales_path(), html: { multipart: true, class: "form-horizontal denser", data: { title: @page_name } } do |form|
+= form_for User.new, url: sales_path(), html: { multipart: true, class: "", data: { title: @page_name } } do |form|
+  %div.form-group.control-group
+    = form.label 'account', class: 'control-label col-sm-2'
+    %div.controls.col-sm-10
+      = form.text_field :account, class: 'form-control'
+      %span.help-block *推广人帐号需要为参加拓行天下年费礼包活动的手机号.
+  %div.form-group.control-group
+    = form.label 'cellphone', class: 'control-label col-sm-2'
+    %div.controls.col-sm-10
+      = form.text_field :cellphone, class: 'form-control'
+      %span.help-block 
   %div.form-group.control-group
     = form.label 'name', class: 'control-label col-sm-2'
     %div.controls.col-sm-10
       = form.text_field :name, class: 'form-control'
       %span.help-block 必填. 最长 255.
-    %div.form-group.control-group
+  %div.form-group.control-group
+    = form.label 'roles', class: 'control-label col-sm-2'
+    %div.controls.col-sm-10
+      = form.select :role_ids, Role.for_sale.collect {|p| [ p.name, p.id ] }, { prompt: '请选择' }, class: 'form-control', name: "user[role_ids][]"
+      %span.help-block *请您在选择用户类型时，再次确认对应的年费金额，提交成功后，将无法修改。
+  %div.form-group.control-group
+    = form.label 'team', class: 'control-label col-sm-2'
+    %div.controls.col-sm-10
+      = form.select :team_id, Team.all.collect{|p| [ p.name, p.id ] }, { prompt: '请选择' }, class: 'form-control'
+      %span.help-block 
+  %div.form-group.control-group
+    = form.label 'card_num', class: 'control-label col-sm-2'
+    %div.controls.col-sm-10
+      = form.text_field :card_num, autocomplete: "off", class: 'form-control'
+      %span.help-block
+  %div.form-group.control-group
+    = form.label 'bank_num', class: 'control-label col-sm-2'
+    %div.controls.col-sm-10
+      = form.text_field :bank_num, autocomplete: "off", class: 'form-control'
+      %span.help-block
+  %div.form-group.control-group
+    = form.label 'sms_num', class: 'control-label col-sm-2'
+    %div.controls.col-sm-10
+      = form.text_field :sms_num, autocomplete: "off", class: 'form-control'
+      %span.help-block * 短信接收手机号码，可以和账号相同，也可以不同。
+  %div.form-group.control-group
+    = form.label 'address', class: 'control-label col-sm-2'
+    %div.controls.col-sm-10
+      = form.text_field :address, autocomplete: "off", class: 'form-control'
+      %span.help-block
+  %div.form-group.control-group
     = form.label 'email', class: 'control-label col-sm-2'
     %div.controls.col-sm-10
-      = form.text_field :email, class: 'form-control'
+      = form.text_field :email, autocomplete: "off", class: 'form-control'
       %span.help-block 必填. 最长 255.
-  %div.form-group.control-group
+  %div.form-group.control-group.hide
     = form.label 'password', class: 'control-label col-sm-2'
     %div.controls.col-sm-10
-      = form.password_field :password, class: 'form-control'
+      = form.password_field :password, autocomplete: "off", class: 'form-control', value: '000000'
       %span.help-block 必填. 最长 6-128.
   %div.form-group.control-group
     = form.label 'notes', class: 'control-label col-sm-2'
     %div.controls.col-sm-10
       = form.text_area :notes, class: 'form-control'
-      %span.help-block 可选. 
-    %div.form-group.form-actions
+      %span.help-block 可选.
+  %div.form-group.form-actions
     %div.col-sm-offset-2.col-sm-10
       = form.button t('admin.form.save'), class: 'btn btn-primary'
+      = form.button t('admin.form.cancel'), class: 'btn'

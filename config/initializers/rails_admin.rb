@@ -28,6 +28,7 @@ RailsAdmin.config do |config|
     weight 1
     list do
       field :id
+      field :account
       field :name
       field :email
       field :notes

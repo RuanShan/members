@@ -13,13 +13,21 @@ zh-CN:
         created_at: "创建时间"
       user:
         id: "#"
-        name: "名字"
+        name: "真实姓名"
         email: "电子邮箱"
         team: "部门"
         password: "密码"
         password_confirmation: "密码确认"
         notes: "备注"
         created_at: "创建时间"
+        account: "推广人帐号"
+        cellphone: "手机号码"
+        card_num: "身份证号码"
+        bank_num: "银行卡号"
+        sms_num: "短信接收号码"
+        address: "联系地址"
+        company_address: "经营所在地"
+        roles: "用户类型"
     models:
       team:
         one: "部门"

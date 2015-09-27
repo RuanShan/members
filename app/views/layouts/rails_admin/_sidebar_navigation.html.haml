@@ -1,3 +1,8 @@
+%ul.nav.nav-pills.nav-stacked
+  <li class="dropdown-header">帐号安全</li>
+  %li{ 'data-model'=>"", 'class'=>"disabled"  }
+    <a href="#" class="pjax">帐号信息</a>
+
 - if current_user.has_role? 'admin'
   %ul.nav.nav-pills.nav-stacked
     <li class="dropdown-header">基本设置</li>
@@ -6,12 +11,9 @@
     <li class="dropdown-header">会员管理</li>
     %li{ 'data-model'=>"user", 'class'=>"#{ get_nav_css_class('user') }"  }
       <a href="/admin/user" class="pjax">会员</a>
-    <li class="dropdown-header">账户管理</li>
-    %li{ 'data-model'=>"credit", 'class'=>"#{ get_nav_css_class('credit') }"  }
-      <a href="/admin/credit" class="pjax">充值记录</a></li>
-  %ul.nav.nav-pills.nav-stacked
-    %li.dropdown-header= t('admin.actions.new_sale')
-    %li{ 'class'=> "#{ get_nav_css_class('sale') }" }= link_to t('admin.misc.big_sale'), new_sales_path
+  =render 'layouts/rails_admin/credit_navigation'
+  =render 'layouts/rails_admin/sale_navigation'
+  =render 'layouts/rails_admin/deal_navigation'
   %ul.nav.nav-pills.nav-stacked
 - else
   %ul.nav.nav-pills.nav-stacked
@@ -21,7 +23,5 @@
     <li class="dropdown-header">账户管理</li>
     %li{ 'data-model'=>"credit", 'class'=>"#{ get_nav_css_class('credit') }"  }
       <a class="pjax" href="/admin/credit">充值记录</a>
-  %ul.nav.nav-pills.nav-stacked
-    %li.dropdown-header= t('admin.actions.new_sale')
-    %li{ 'class'=> "#{ get_nav_css_class('sale') }" }= link_to t('admin.misc.big_sale'), new_sales_path
+  =render 'layouts/rails_admin/sale_navigation'
   %ul.nav.nav-pills.nav-stacked

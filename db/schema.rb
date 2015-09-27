@@ -129,6 +129,7 @@ ActiveRecord::Schema.define(version: 20150924092549) do
 
   create_table "roles", force: true do |t|
     t.string "name"
+    t.string "category"
   end
 
   create_table "roles_users", id: false, force: true do |t|
@@ -174,6 +175,13 @@ ActiveRecord::Schema.define(version: 20150924092549) do
     t.date     "born_on"
     t.datetime "deleted_at"
     t.text     "notes"
+    t.string   "account",                limit: 36
+    t.string   "cellphone",              limit: 16
+    t.string   "card_num",               limit: 36
+    t.string   "bank_num",               limit: 36
+    t.string   "sms_num",                limit: 16
+    t.string   "address",                limit: 100
+    t.string   "company_address",        limit: 100
     t.integer  "parent_id"
     t.string   "email",                              default: "",    null: false
     t.string   "encrypted_password",                 default: "",    null: false
@@ -200,7 +208,7 @@ ActiveRecord::Schema.define(version: 20150924092549) do
     t.string   "roles"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["account"], name: "index_users_on_account", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end

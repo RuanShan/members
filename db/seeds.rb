@@ -6,11 +6,19 @@ division_model = RailsAdmin::AbstractModel.new(Division)
 team_model     = RailsAdmin::AbstractModel.new(Team)
 player_model   = RailsAdmin::AbstractModel.new(Player)
 
+[{ name: '卖家(990元/年)', category: 'sale'},{ name: '推广员(1980元/年)', category: 'sale'}].each{|attrs|
+  role = role_model.new( attrs)
+  role.save
+}
+[{ name: '销售一部'},{ name: '销售二部'}].each{|attrs|
+  role = team_model.new( attrs)
+  role.save
+}
 
 admin_role = role_model.new( name: 'admin')
 admin_role.save
 role_model.new( name: 'player').save
-user_model.new(:name=>'admin', :email => 'admin@example.com', :password => 'password', :password_confirmation => 'password', :roles=>[ admin_role ]).save
+user_model.new(:name=>'admin', :account => 'admin', :email => 'admin@example.com', :password => 'password', :roles=>[ admin_role ]).save
 
 #MLB::Team.all.each do |mlb_team|
 #  unless league = league_model.where(:name => mlb_team.league).first

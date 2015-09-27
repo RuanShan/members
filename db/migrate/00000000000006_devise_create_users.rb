@@ -13,6 +13,15 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.datetime :deleted_at
       t.text :notes
 
+      #private information
+      t.string :account, :limit => 36
+      t.string :cellphone, :limit => 16
+      t.string :card_num, :limit => 36  # id card number
+      t.string :bank_num, :limit => 36  # bank card number
+      t.string :sms_num, :limit => 16   # cellphone for sms
+      t.string :address, :limit => 100  # cellphone for sms
+      t.string :company_address, :limit => 100  # cellphone for sms
+
       #nested set
       t.integer :parent_id, :null => true, :index => true
       #t.integer :lft, :null => false, :index => true

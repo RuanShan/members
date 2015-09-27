@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   belongs_to :team, :inverse_of => :players
 
   validates_presence_of(:name)
+  validates_presence_of(:account)
   # Add Paperclip support for avatars
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
 

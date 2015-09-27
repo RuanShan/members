@@ -1,18 +1,24 @@
-<div class="panel">
+<div class="row" style="margin: 30px 0 0 0;">
+  <div class="col-md-4 col-md-offset-4  col-xs-offset-2 col-xs-8">
 
-<h2>Sign in</h2>
+    <div class="panel">
+      <div class="panel-heading">
+        <h2 class=""> <%= t('devise.titles.sign_in') %></h2>
+      </div>
+      <div class="panel-body">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-group"><%= f.label :account %><br />
+      <%= f.text_field :account, autofocus: true, class:'form-control' %></div>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+      <div class="form-group"><%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: "off", class:'form-control' %></div>
 
-  <div><%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
+      <% if false#devise_mapping.rememberable? -%>
+        <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+      <% end -%>
 
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
-
-  <div><%= f.submit "Sign in" %></div>
-<% end %>
+      <div><%= f.submit t('devise.actions.sign_in'), class: 'btn btn-primary' %></div>
+    <% end %>
+    </div>
+  </div>
 </div>
