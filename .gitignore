@@ -33,5 +33,5 @@ bower.json
 
 # Ignore pow environment settings
 .powenv
-/public/assets/*.*
+/public/assets
 /db/schema.rb
