@@ -1,14 +1,13 @@
 %ul.nav.nav-pills.nav-stacked
   %li.dropdown-header 拓行天下
-  %li{ 'class'=> "#{ get_nav_css_class('sale') }" }= link_to '年费礼包销售', new_sales_path
+  %li{ 'class'=> "#{ get_nav_css_class('sales_new') }" }= link_to '年费礼包销售', new_sale_path
   %li{  'class'=>"disabled"  }
     <a href="#" class="">卖家升级</a>
   %li{  'class'=>"disabled"  }
     <a href="#" class="">变更信息</a>
   %li{  'class'=>"disabled"  }
     <a href="#" class="">我的销售部门</a>
-  %li{  'class'=>"disabled"  }
-    <a href="#" class="">销售记录</a>
+  %li{ 'class'=> "#{ get_nav_css_class('sales_index') }" }= link_to '销售记录', sales_path
   %li{  'class'=>"disabled"  }
     <a href="#" class="">我的订单</a>
   %li{  'class'=>"disabled"  }

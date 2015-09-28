@@ -4,8 +4,7 @@
     $('#gostep2').click(function(){ $(this).parents('.step').addClass('hide').next().removeClass('hide') })
   })
 %div.page-header
-  %h1 我要销售
-
+  %h1= @page_name
 %div#step1.step
   %button.btn.btn-primary#gostep1 开始销售
 

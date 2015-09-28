@@ -1,5 +1,3 @@
-.page-header
-  %h1= @page_name
 - flash && flash.each do |key, value|
   .alert{class: flash_alert_class(key)}
     %a.close{href: '#', :'data-dismiss' => "alert"} &times;
