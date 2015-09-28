@@ -1,6 +1,7 @@
 //=  require 'jquery'
 //=  require 'jquery_ujs'
 //=  require 'jquery.validate.js'
+//=  require 'jquery.validate/localization/messages_zh-CN.js'
 //=  require 'rails_admin/jquery.remotipart.fixed'
 //=  require 'jquery-ui/effect'
 //=  require 'jquery-ui/sortable'

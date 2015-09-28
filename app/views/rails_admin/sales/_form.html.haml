@@ -2,17 +2,17 @@
   %div.form-group.control-group
     = form.label 'account', class: 'control-label col-sm-2'
     %div.controls.col-sm-10
-      = form.text_field :account, class: 'form-control'
+      = form.text_field :account, class: 'form-control', required: true
       %span.help-block *推广人帐号需要为参加拓行天下年费礼包活动的手机号.
   %div.form-group.control-group
     = form.label 'cellphone', class: 'control-label col-sm-2'
     %div.controls.col-sm-10
       = form.text_field :cellphone, class: 'form-control'
-      %span.help-block 
+      %span.help-block
   %div.form-group.control-group
     = form.label 'name', class: 'control-label col-sm-2'
     %div.controls.col-sm-10
-      = form.text_field :name, class: 'form-control'
+      = form.text_field :name, class: 'form-control', required: true
       %span.help-block 必填. 最长 255.
   %div.form-group.control-group
     = form.label 'roles', class: 'control-label col-sm-2'
@@ -23,7 +23,7 @@
     = form.label 'team', class: 'control-label col-sm-2'
     %div.controls.col-sm-10
       = form.select :team_id, Team.all.collect{|p| [ p.name, p.id ] }, { prompt: '请选择' }, class: 'form-control'
-      %span.help-block 
+      %span.help-block
   %div.form-group.control-group
     = form.label 'card_num', class: 'control-label col-sm-2'
     %div.controls.col-sm-10
@@ -47,7 +47,7 @@
   %div.form-group.control-group
     = form.label 'email', class: 'control-label col-sm-2'
     %div.controls.col-sm-10
-      = form.text_field :email, autocomplete: "off", class: 'form-control'
+      = form.text_field :email, autocomplete: "off", class: 'form-control', required: true, email: true
       %span.help-block 必填. 最长 255.
   %div.form-group.control-group.hide
     = form.label 'password', class: 'control-label col-sm-2'
@@ -63,3 +63,29 @@
     %div.col-sm-offset-2.col-sm-10
       = form.button t('admin.form.save'), class: 'btn btn-primary'
       = form.button t('admin.form.cancel'), class: 'btn'
+:javascript
+  $("#new_user").validate({
+    rules: {
+      'user[account]': {
+        remote: {
+          url: '/check_account',
+          dateType: 'json',
+        }
+      },
+      'user[email]': {
+        email: true,
+        remote: {
+          url: '/check_email',
+          dateType: 'json',
+        }
+      }
+    },
+    messages:{
+      'user[email]': {
+        remote: '邮箱已被注册'
+      },
+      'user[account]': {
+        remote: '帐号已被注册'
+      }
+    }
+  });

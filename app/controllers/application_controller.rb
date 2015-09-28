@@ -3,4 +3,6 @@ class ApplicationController < ActionController::Base
     redirect_to  '/users/sign_in', :alert => exception.message
   end
   protect_from_forgery
+
+
 end
