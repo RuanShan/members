@@ -35,9 +35,12 @@ ActiveRecord::Schema.define(version: 20150924092549) do
   end
 
   create_table "credits", force: true do |t|
-    t.integer  "owner_id",                           default: 0
-    t.integer  "user_id",                                        null: false
-    t.decimal  "amount",     precision: 2, scale: 0, default: 0, null: false
+    t.integer  "creator_id",                                     default: 0
+    t.integer  "user_id",                                                    null: false
+    t.decimal  "amount",                 precision: 2, scale: 0, default: 0, null: false
+    t.integer  "deal_type",                                      default: 1
+    t.string   "deal_action", limit: 24
+    t.integer  "status",                                         default: 0
     t.string   "notes"
     t.datetime "created_at"
     t.datetime "updated_at"

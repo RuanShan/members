@@ -6,8 +6,9 @@ zh-CN:
         user: "会员"
         user_id: "会员"
         amount: "金额"
+        deal_type: "交易类型"
         notes: "备注"
-        created_at: "创建时间"
+        created_at: "交易时间"
       team:
         name: "名称"
         created_at: "创建时间"
@@ -94,6 +95,20 @@ zh-CN:
         menu: "在应用程序中显示"
       sale: "销售管理"
       new_sale: "销售管理"
+      sale_records: "销售记录"
+      deal_records: "交易记录"
+      sales:
+        id: '#'
+        account_info: "注册人信息"
+        created_at: "销售日期"
+        role_info: "注册人类型"
+      deals:
+        id: '#'
+        user_info: "交易对象"
+        created_at: "交易时间"
+        deal_type_info: "交易类型"
+        deal_action_info: "交易动作"
+        amount: "交易额"
     export:
       click_to_reverse_selection: "单击以反向选择"
       confirmation: "以 %{name} 格式导出"

@@ -1,7 +1,6 @@
 %ul.nav.nav-pills.nav-stacked
   %li.dropdown-header 业务查询
-  %li{ 'class'=>"disabled"  }
-    <a href="#" class="">交易记录</a>
+  %li{ 'class'=> "#{ get_nav_css_class('deals_index') }" }= link_to '交易记录', deals_path  
   %li{ 'class'=>"disabled"  }
     <a href="#" class="">销售记录</a>
   %li{ 'class'=>"disabled"  }

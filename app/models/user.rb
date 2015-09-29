@@ -9,7 +9,8 @@ class User < ActiveRecord::Base
   #attr_accessible :email, :password, :password_confirmation, :remember_me, :roles, :avatar
   has_and_belongs_to_many :roles
   belongs_to :team, :inverse_of => :players
-
+  has_many :credits
+  
   validates_presence_of(:name)
   validates_presence_of(:account)
   # Add Paperclip support for avatars
@@ -25,5 +26,13 @@ class User < ActiveRecord::Base
 
   def has_role?(role_in_question)
     roles.where(name: role_in_question.to_s).any?
+  end
+
+  def account_info
+    "#{account}(#{name})"
+  end
+
+  def role_info
+    roles.map(&:name).join
   end
 end

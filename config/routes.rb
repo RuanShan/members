@@ -1,5 +1,6 @@
 RailsAdmin::Engine.routes.draw do
   resources :sales
+  resources :deals
 end
 
 DummyApp::Application.routes.draw do
