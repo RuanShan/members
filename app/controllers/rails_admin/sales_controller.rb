@@ -24,7 +24,7 @@ module RailsAdmin
       user_params = params.require(:user).permit!
       user = User.new( user_params )
       user.parent = current_user
-      #Rails.logger.debug " valid=#{user.valid?} user=#{user.errors.inspect}"
+      Rails.logger.info " valid=#{user.valid?} user=#{user.errors.inspect}"
       if user.save
         flash[:success] = t('admin.flash.successful', action: '创建', name: '下级会员')
         redirect_to sales_path
