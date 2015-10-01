@@ -36,6 +36,7 @@ RailsAdmin.config do |config|
     end
 
     create do
+      field :account
       field :name
       field :email
       field :password

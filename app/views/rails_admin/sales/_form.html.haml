@@ -1,19 +1,19 @@
 = form_for User.new, url: sales_path(), html: { multipart: true, class: "", data: { title: @page_name } } do |form|
   %div.form-group.control-group
-    = form.label 'account', class: 'control-label col-sm-2'
+    = form.label 'parent_account', class: 'control-label col-sm-2'
     %div.controls.col-sm-10
-      = form.text_field :account, class: 'form-control', required: true
+      = form.text_field :parent_account, class: 'form-control', required: true
       %span.help-block *推广人帐号需要为参加拓行天下年费礼包活动的手机号.
-  %div.form-group.control-group
-    = form.label 'password', class: 'control-label col-sm-2'
-    %div.controls.col-sm-10
-      = form.password_field :password, class: 'form-control', required:true
-      %span.help-block 必填. 长度 6-24.
   %div.form-group.control-group
     = form.label 'cellphone', class: 'control-label col-sm-2'
     %div.controls.col-sm-10
       = form.text_field :cellphone, class: 'form-control'
       %span.help-block
+  %div.form-group.control-group
+    = form.label 'password', class: 'control-label col-sm-2'
+    %div.controls.col-sm-10
+      = form.password_field :password, class: 'form-control', required:true
+      %span.help-block 必填. 长度 6-24.
   %div.form-group.control-group
     = form.label 'name', class: 'control-label col-sm-2'
     %div.controls.col-sm-10
@@ -33,6 +33,11 @@
     = form.label 'card_num', class: 'control-label col-sm-2'
     %div.controls.col-sm-10
       = form.text_field :card_num, autocomplete: "off", class: 'form-control'
+      %span.help-block
+  %div.form-group.control-group
+    = form.label 'bank_name', class: 'control-label col-sm-2'
+    %div.controls.col-sm-10
+      = form.text_field :bank_name, class: 'form-control'
       %span.help-block
   %div.form-group.control-group
     = form.label 'bank_num', class: 'control-label col-sm-2'

@@ -15,8 +15,10 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
       #private information
       t.string :account, :limit => 36
+      t.string :parent_account, :limit => 36
       t.string :cellphone, :limit => 16
       t.string :card_num, :limit => 36  # id card number
+      t.string :bank_name, :limit => 36  # bank card number
       t.string :bank_num, :limit => 36  # bank card number
       t.string :sms_num, :limit => 16   # cellphone for sms
       t.string :address, :limit => 100  # cellphone for sms

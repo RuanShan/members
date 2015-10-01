@@ -10,9 +10,9 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :roles
   belongs_to :team, :inverse_of => :players
   has_many :credits
-  
+
   validates_presence_of(:name)
-  validates_presence_of(:account)
+  #validates_presence_of(:account)
   # Add Paperclip support for avatars
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
 
@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
   end
 
   def account_info
-    "#{account}(#{name})"
+    "#{cellphone}(#{name})"
   end
 
   def role_info

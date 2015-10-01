@@ -179,8 +179,10 @@ ActiveRecord::Schema.define(version: 20150924092549) do
     t.datetime "deleted_at"
     t.text     "notes"
     t.string   "account",                limit: 36
+    t.string   "parent_account",         limit: 36
     t.string   "cellphone",              limit: 16
     t.string   "card_num",               limit: 36
+    t.string   "bank_name",              limit: 36
     t.string   "bank_num",               limit: 36
     t.string   "sms_num",                limit: 16
     t.string   "address",                limit: 100
