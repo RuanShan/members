@@ -31,8 +31,7 @@ RailsAdmin.config do |config|
       field :account
       field :name
       field :email
-      field :notes
-      field :created_at
+      field :team
     end
 
     create do

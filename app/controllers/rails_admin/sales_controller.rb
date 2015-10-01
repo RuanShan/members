@@ -23,6 +23,7 @@ module RailsAdmin
     def create
       user_params = params.require(:user).permit!
       user = User.new( user_params )
+      user.account = user.cellphone
       user.parent = current_user
       Rails.logger.info " valid=#{user.valid?} user=#{user.errors.inspect}"
       if user.save
