@@ -21,8 +21,8 @@ user_model.new(:name=>'admin', :account => 'admin', :email => 'admin@example.com
 
 wholesaler_role = role_model.new( name: 'wholesaler')
 wholesaler_role.save
-user_model.new(:name=>'xiaosou1', :account => 'xiaosou1', :email => 'xiaosou1@example.com', :password => 'password', :roles=>[ wholesaler_role ], :team=>Team.find(1)).save
-user_model.new(:name=>'xiaosou2', :account => 'xiaosou2', :email => 'xiaosou2@example.com', :password => 'password', :roles=>[ wholesaler_role ], :team=>Team.find(2)).save
+user_model.new(:name=>'xiaosou1', :account => 'xiaosou1', :email => 'xiaosou1@example.com', :password => '666666', :roles=>[ wholesaler_role ], :team=>Team.find(1)).save
+user_model.new(:name=>'xiaosou2', :account => 'xiaosou2', :email => 'xiaosou2@example.com', :password => '666666', :roles=>[ wholesaler_role ], :team=>Team.find(2)).save
 
 #MLB::Team.all.each do |mlb_team|
 #  unless league = league_model.where(:name => mlb_team.league).first
