@@ -50,13 +50,18 @@ RailsAdmin.config do |config|
       field :cellphone
       field :email
       field :team
+      field :bank_name
+      field :bank_num
       field :notes
     end
 
     show do
+      field :account
       field :name
       field :email
       field :team
+      field :bank_name
+      field :bank_num
       field :notes
     end
   end

@@ -1,6 +1,7 @@
 %ul.nav.nav-pills.nav-stacked
   %li.dropdown-header 拓行天下
-  %li{ 'class'=> "#{ get_nav_css_class('sales_new') }" }= link_to '年费礼包销售', new_sale_path
+  - if current_user.has_role? 'admin'
+    %li{ 'class'=> "#{ get_nav_css_class('sales_new') }" }= link_to '年费礼包销售', new_sale_path
   %li{  'class'=>"disabled"  }
     <a href="#" class="">卖家升级</a>
   %li{  'class'=>"disabled"  }
