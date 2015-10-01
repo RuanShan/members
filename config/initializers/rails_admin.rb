@@ -37,6 +37,7 @@ RailsAdmin.config do |config|
     create do
       field :account
       field :name
+      field :cellphone
       field :email
       field :password
       field :password_confirmation
@@ -46,6 +47,7 @@ RailsAdmin.config do |config|
 
     edit do
       field :name
+      field :cellphone
       field :email
       field :team
       field :notes
