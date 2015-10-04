@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150924092549) do
+ActiveRecord::Schema.define(version: 20151004092549) do
 
   create_table "balls", force: true do |t|
     t.string   "color"
@@ -210,7 +210,7 @@ ActiveRecord::Schema.define(version: 20150924092549) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.string   "roles"
+    t.string   "unused_roles"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
