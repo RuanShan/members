@@ -41,6 +41,7 @@ RailsAdmin.config do |config|
       field :email
       field :password
       field :password_confirmation
+      #field :roles
       field :team
       field :notes
     end
