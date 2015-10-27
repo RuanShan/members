@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :lockable
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :lockable #, :validatable
 
   # Setup accessible (or protected) attributes for your model
   #attr_accessible :email, :password, :password_confirmation, :remember_me, :roles, :avatar
@@ -14,9 +14,10 @@ class User < ActiveRecord::Base
   has_many :credits
 
   validates_presence_of(:name)
-  #validates_presence_of(:account)
+  validates_presence_of(:account)
   # Add Paperclip support for avatars
   #has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  before_validation  :set_email  # it is unique indexed now, set it if it is empty.
 
   def attr_accessible_role
     :custom_role
@@ -36,5 +37,10 @@ class User < ActiveRecord::Base
 
   def role_info
     roles.map(&:name).join
+  end
+
+  private
+  def set_email
+    self.email = "#{Time.now.to_i}-#{object_id}@example.com" if email.blank?
   end
 end

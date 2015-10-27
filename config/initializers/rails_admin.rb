@@ -30,7 +30,7 @@ RailsAdmin.config do |config|
       field :id
       field :account
       field :name
-      field :email
+      field :bank_num
       field :team
     end
 
@@ -48,21 +48,24 @@ RailsAdmin.config do |config|
 
     edit do
       field :name
-      field :cellphone
-      field :email
       field :team
+      field :cellphone
+      field :card_num
       field :bank_name
       field :bank_num
+      field :address
       field :notes
     end
 
     show do
       field :account
       field :name
-      field :email
       field :team
+      field :cellphone
+      field :card_num
       field :bank_name
       field :bank_num
+      field :address
       field :notes
     end
   end

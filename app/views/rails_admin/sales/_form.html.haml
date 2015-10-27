@@ -22,27 +22,22 @@
   %div.form-group.control-group
     = form.label 'roles', class: 'control-label col-sm-2'
     %div.controls.col-sm-10
-      = form.select :role_ids, Role.for_sale.collect {|p| [ p.name, p.id ] }, { prompt: '请选择' }, class: 'form-control', name: "user[role_ids][]"
+      = form.select :role_ids, Role.for_sale.collect {|r| [ r.name, r.id ] }, { prompt: '请选择' }, class: 'form-control', name: "user[role_ids][]", required: true
       %span.help-block *请您在选择用户类型时，再次确认对应的年费金额，提交成功后，将无法修改。
-  %div.form-group.control-group
-    = form.label 'team', class: 'control-label col-sm-2'
-    %div.controls.col-sm-10
-      = form.select :team_id, Team.all.collect{|p| [ p.name, p.id ] }, { prompt: '请选择' }, class: 'form-control'
-      %span.help-block
   %div.form-group.control-group
     = form.label 'card_num', class: 'control-label col-sm-2'
     %div.controls.col-sm-10
-      = form.text_field :card_num, autocomplete: "off", class: 'form-control'
+      = form.text_field :card_num, autocomplete: "off", class: 'form-control', required: true
       %span.help-block
   %div.form-group.control-group
     = form.label 'bank_name', class: 'control-label col-sm-2'
     %div.controls.col-sm-10
-      = form.text_field :bank_name, class: 'form-control'
+      = form.text_field :bank_name, class: 'form-control', required: true
       %span.help-block
   %div.form-group.control-group
     = form.label 'bank_num', class: 'control-label col-sm-2'
     %div.controls.col-sm-10
-      = form.text_field :bank_num, autocomplete: "off", class: 'form-control'
+      = form.text_field :bank_num, autocomplete: "off", class: 'form-control', required: true
       %span.help-block
   %div.form-group.control-group
     = form.label 'sms_num', class: 'control-label col-sm-2'
@@ -57,13 +52,13 @@
   %div.form-group.control-group
     = form.label 'email', class: 'control-label col-sm-2'
     %div.controls.col-sm-10
-      = form.text_field :email, autocomplete: "off", class: 'form-control', required: true, email: true
-      %span.help-block 必填. 最长 255.
+      = form.text_field :email, autocomplete: "off", class: 'form-control', email: true
+      %span.help-block
   %div.form-group.control-group
     = form.label 'notes', class: 'control-label col-sm-2'
     %div.controls.col-sm-10
       = form.text_area :notes, class: 'form-control'
-      %span.help-block 可选.
+      %span.help-block
   %div.form-group.form-actions
     %div.col-sm-offset-2.col-sm-10
       = form.button t('admin.form.save'), class: 'btn btn-primary'
@@ -79,18 +74,10 @@
       },
       'user[password]': {
         rangelength: [6, 24]
-      },
-      'user[email]': {
-        email: true,
-        remote: {
-          url: '/check_email',
-          dateType: 'json',
-        }
       }
     },
     messages:{
       'user[email]': {
-        remote: '邮箱已被注册'
       },
       'user[account]': {
         remote: '帐号已被注册'

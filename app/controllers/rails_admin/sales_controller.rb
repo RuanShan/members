@@ -25,6 +25,8 @@ module RailsAdmin
       user = User.new( user_params )
       user.account = user.cellphone
       user.parent = current_user
+      user.team = current_user.team
+      
       Rails.logger.info " valid=#{user.valid?} user=#{user.errors.inspect}"
       if user.save
         flash[:success] = t('admin.flash.successful', action: '创建', name: '下级会员')
