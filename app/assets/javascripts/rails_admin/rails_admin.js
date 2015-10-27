@@ -1,3 +1,5 @@
+//=  require 'html5shiv.min'    
+//=  require 'respond.min'
 //=  require 'jquery'
 //=  require 'jquery_ujs'
 //=  require 'jquery.validate.js'
