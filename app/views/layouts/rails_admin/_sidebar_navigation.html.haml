@@ -6,6 +6,8 @@
 - if current_user.has_role? 'admin'
   %ul.nav.nav-pills.nav-stacked
     <li class="dropdown-header">基本设置</li>
+    %li{ 'data-model'=>"company_notice", 'class'=>"#{ get_nav_css_class('commpany_notice')  }"  }
+      <a href="/admin/company_notice" class="pjax">公司公告</a>
     %li{ 'data-model'=>"team", 'class'=>"#{ get_nav_css_class('team')  }"  }
       <a href="/admin/team" class="pjax">部门</a>
     <li class="dropdown-header">会员管理</li>

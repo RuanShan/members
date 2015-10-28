@@ -4,7 +4,7 @@
 RailsAdmin.config do |config|
   config.main_app_name = ["微商", "管理系统"]
   #config.excluded_models = ['RelTest','Player']
-  config.included_models = [ "Team", "User", "Credit"]
+  config.included_models = [ "CompanyNotice", "Team", "User", "Credit"]
 
   config.authenticate_with {}
   config.current_user_method {

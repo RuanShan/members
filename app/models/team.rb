@@ -1,6 +1,4 @@
 # coding: utf-8
-
-
 class Team < ActiveRecord::Base
   #validates_numericality_of :division_id, :only_integer => true
   #validates_presence_of :manager

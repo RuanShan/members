@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151004092549) do
+ActiveRecord::Schema.define(version: 20151027092549) do
 
   create_table "balls", force: true do |t|
     t.string   "color"
@@ -30,6 +30,13 @@ ActiveRecord::Schema.define(version: 20151004092549) do
     t.integer  "commentable_id"
     t.string   "commentable_type"
     t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "company_notices", force: true do |t|
+    t.string   "title"
+    t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

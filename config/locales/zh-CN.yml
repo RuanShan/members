@@ -1,6 +1,12 @@
 zh-CN:
   activerecord:
     attributes:
+      company_notice:
+        id: "#"
+        title: "标题"
+        body: "正文"
+        created_at: "交易时间"
+        updated_at: "更新时间"
       credit:
         id: "#"
         user: "会员"
@@ -32,15 +38,18 @@ zh-CN:
         company_address: "经营所在地"
         roles: "用户类型"
     models:
+      company_notice:
+        one: "公司公告"
+        other: "公司公告"        
+      credit:
+        one: "充值记录"
+        other: "充值记录"
       team:
         one: "部门"
         other: "部门"
       user:
         one: "会员"
         other: "会员"
-      credit:
-        one: "充值记录"
-        other: "充值记录"
   admin:
     actions:
       bulk_delete:

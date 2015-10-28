@@ -12,6 +12,7 @@ class Ability
         can [:read, :update], Credit, user_id: user.id
         can :display, Player, parent_id: user.id
         can [:read, :update], User, id: user.id
+        can :display, CompanyNotice
       end
       cannot [:destroy], User, :email => 'admin@example.com'
     end
