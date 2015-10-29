@@ -5,7 +5,7 @@ zh-CN:
         id: "#"
         title: "标题"
         body: "正文"
-        created_at: "交易时间"
+        created_at: "创建时间"
         updated_at: "更新时间"
       credit:
         id: "#"
@@ -40,7 +40,7 @@ zh-CN:
     models:
       company_notice:
         one: "公司公告"
-        other: "公司公告"        
+        other: "公司公告"
       credit:
         one: "充值记录"
         other: "充值记录"

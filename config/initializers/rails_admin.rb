@@ -13,6 +13,7 @@ RailsAdmin.config do |config|
   config.authorize_with :cancan
   config.audit_with :history, User
 
+
   config.model 'Team' do
     navigation_label '基本设置'
     weight 0
@@ -22,10 +23,19 @@ RailsAdmin.config do |config|
     end
   end
 
+  config.model 'CompanyNotice' do
+    navigation_label '公司公告'
+    weight 1
+    list do
+      field :id
+      field :title
+      field :created_at
+    end
+  end
 
   config.model 'User' do
     navigation_label '会员管理'
-    weight 1
+    weight 2
     list do
       field :id
       field :account
@@ -72,7 +82,7 @@ RailsAdmin.config do |config|
 
   config.model 'Credit' do
     navigation_label '账户管理'
-    weight 2
+    weight 3
     list do
       field :id
       field :user
