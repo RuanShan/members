@@ -36,7 +36,7 @@ group :development, :test do
 end
 
 
-gem 'cancan'
+gem 'cancancan'
 gem 'devise'
 gem 'rails_admin',   :path => './rails_admin'
 
