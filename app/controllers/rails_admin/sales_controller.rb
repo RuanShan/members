@@ -8,7 +8,7 @@ module RailsAdmin
     def index
       page_num = ( params[Kaminari.config.param_name] || 1).to_i
       pege_size = ( params[:per] || 16  ).to_i
-      @objects = current_user.children( ).page(page_num).per(pege_size)
+      @objects = current_user.children( ).page(page_num).per(pege_size).order(created_at: :desc)
       @page_name = '销售记录'
     end
 
@@ -26,7 +26,7 @@ module RailsAdmin
       user.account = user.cellphone
       user.parent = current_user
       user.team = current_user.team
-      
+
       Rails.logger.info " valid=#{user.valid?} user=#{user.errors.inspect}"
       if user.save
         flash[:success] = t('admin.flash.successful', action: '创建', name: '下级会员')
