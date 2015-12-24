@@ -15,6 +15,9 @@ zh-CN:
         deal_type: "交易类型"
         notes: "备注"
         created_at: "交易时间"
+        status: "状态"
+        status_unconfirmed: "待审核"
+        status_confirmed: "审核通过"
       team:
         name: "名称"
         created_at: "创建时间"

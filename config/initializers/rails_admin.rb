@@ -42,6 +42,7 @@ RailsAdmin.config do |config|
       field :name
       field :bank_num
       field :team
+      field :created_at
     end
 
     create do
@@ -89,10 +90,22 @@ RailsAdmin.config do |config|
       field :amount
       field :notes
       field :created_at
+      field :status
     end
-    field :user
+
+
+    field :user do
+      inline_add false
+      inline_edit false
+    end
     field :amount
     field :notes
+    field :status do
+      read_only do
+        bindings[:view]._current_user.role_info.include?('wholesaler')
+      end
+    end
+
   end
 
   config.actions do
