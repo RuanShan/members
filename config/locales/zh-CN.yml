@@ -31,6 +31,7 @@ zh-CN:
         notes: "备注"
         created_at: "创建时间"
         account: "帐号"
+        parent: "推广人"
         parent_account: "推广人帐号"
         cellphone: "手机号码"
         bank_name: "银行名称"

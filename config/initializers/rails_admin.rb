@@ -37,9 +37,9 @@ RailsAdmin.config do |config|
     navigation_label '会员管理'
     weight 2
     list do
-      field :id
       field :account
       field :name
+      field :parent_account
       field :bank_num
       field :team
       field :created_at
@@ -78,6 +78,7 @@ RailsAdmin.config do |config|
       field :bank_num
       field :address
       field :notes
+      field :created_at
     end
   end
 
@@ -102,7 +103,7 @@ RailsAdmin.config do |config|
     field :notes
     field :status do
       read_only do
-        bindings[:view]._current_user.role_info.include?('wholesaler')
+        bindings[:view]._current_user.has_role?('wholesaler')
       end
     end
 

@@ -1,4 +1,4 @@
-en:
+zh-CN:
   admin:
     js:
       true: True
@@ -12,10 +12,10 @@ en:
       this_week: This week
       last_week: Last week
       number: Number ...
-      contains: Contains
-      is_exactly: Is exactly
-      starts_with: Starts with
-      ends_with: Ends with
+      contains: "包含"
+      is_exactly: "等于"
+      starts_with: "开始"
+      ends_with: "结束"
       too_many_objects: "Too many objects, use search box above"
       no_objects: "No objects found"
     loading: "Loading..."
