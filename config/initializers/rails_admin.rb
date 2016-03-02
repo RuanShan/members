@@ -80,6 +80,13 @@ RailsAdmin.config do |config|
       field :notes
       field :created_at
     end
+
+    export do
+      field :name
+      field :cellphone
+      field :bank_num
+      field :notes
+    end
   end
 
   config.model 'Credit' do
@@ -118,7 +125,7 @@ RailsAdmin.config do |config|
     # collection actions
     index                         # mandatory
     new
-    #export
+    export
     #history_index
     #bulk_delete
     # member actions
