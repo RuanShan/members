@@ -1,0 +1,9 @@
+%div.page-header
+  %h1= @page_name
+
+%div#step3.step
+  %div
+
+    = form_for @user, url: sale_path(@user), html: { multipart: true, class: "", data: { title: @page_name }, method: :put } do |form|
+
+      =render partial: 'form', locals: { form: form }

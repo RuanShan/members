@@ -18,6 +18,7 @@ module RailsAdmin
 
     def new
       @page_name = '我要销售'
+      @user=User.new
     end
 
     def create
@@ -27,12 +28,28 @@ module RailsAdmin
       user.parent = current_user
       user.team = current_user.team
 
-      Rails.logger.info " valid=#{user.valid?} user=#{user.errors.inspect}"
+      #Rails.logger.info " valid=#{user.valid?} user=#{user.errors.inspect}"
       if user.save
         flash[:success] = t('admin.flash.successful', action: '创建', name: '下级会员')
         redirect_to sales_path
       else
         render :new
+      end
+    end
+
+    def edit
+      @user = User.find( params[:id] )
+    end
+
+    def update
+      @user = User.find( params[:id] )
+      user_params = params.require(:user).permit!
+
+      if @user.update_attributes(user_params )
+        flash[:success] = t('admin.flash.successful', action: '更新', name: '会员')
+        redirect_to sales_path
+      else
+        render :edit
       end
     end
 

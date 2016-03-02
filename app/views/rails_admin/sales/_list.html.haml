@@ -21,8 +21,10 @@
           %tr{class: ""}
             - sets.each do |column_name|
               %td
-                = object.send column_name
-
+                - if column_name == 'account_info'
+                  = link_to object.send( column_name ), edit_sale_path( object )
+                - else
+                  = object.send column_name
     - if @objects.respond_to?(:total_count)
       - total_count = @objects.total_count.to_i
       .row

@@ -1,68 +1,69 @@
-= form_for User.new, url: sales_path(), html: { multipart: true, class: "", data: { title: @page_name } } do |form|
-  %div.form-group.control-group
-    = form.label 'parent_account', class: 'control-label col-sm-2'
-    %div.controls.col-sm-10
-      = form.text_field :parent_account, class: 'form-control', required: true
-      %span.help-block *推广人帐号需要为参加拓行天下年费礼包活动的手机号.
-  %div.form-group.control-group
-    = form.label 'cellphone', class: 'control-label col-sm-2'
-    %div.controls.col-sm-10
-      = form.text_field :cellphone, class: 'form-control', required:true
-      %span.help-block
+%div.form-group.control-group
+  = form.label 'parent_account', class: 'control-label col-sm-2'
+  %div.controls.col-sm-10
+    = form.text_field :parent_account, class: 'form-control', required: true
+    %span.help-block *推广人帐号需要为参加拓行天下年费礼包活动的手机号.
+%div.form-group.control-group
+  = form.label 'cellphone', class: 'control-label col-sm-2'
+  %div.controls.col-sm-10
+    = form.text_field :cellphone, class: 'form-control', required:true
+    %span.help-block
+- if @user.new_record?
   %div.form-group.control-group
     = form.label 'password', class: 'control-label col-sm-2'
     %div.controls.col-sm-10
       = form.password_field :password, class: 'form-control', required:true
       %span.help-block 必填. 长度 6-24.
-  %div.form-group.control-group
-    = form.label 'name', class: 'control-label col-sm-2'
-    %div.controls.col-sm-10
-      = form.text_field :name, class: 'form-control', required: true
-      %span.help-block 必填. 最长 255.
-  %div.form-group.control-group
-    = form.label 'roles', class: 'control-label col-sm-2'
-    %div.controls.col-sm-10
-      = form.select :role_ids, Role.for_sale.collect {|r| [ r.name, r.id ] }, { prompt: '请选择' }, class: 'form-control', name: "user[role_ids][]", required: true
-      %span.help-block *请您在选择用户类型时，再次确认对应的年费金额，提交成功后，将无法修改。
-  %div.form-group.control-group
-    = form.label 'card_num', class: 'control-label col-sm-2'
-    %div.controls.col-sm-10
-      = form.text_field :card_num, autocomplete: "off", class: 'form-control', required: true
-      %span.help-block
-  %div.form-group.control-group
-    = form.label 'bank_name', class: 'control-label col-sm-2'
-    %div.controls.col-sm-10
-      = form.text_field :bank_name, class: 'form-control', required: true
-      %span.help-block
-  %div.form-group.control-group
-    = form.label 'bank_num', class: 'control-label col-sm-2'
-    %div.controls.col-sm-10
-      = form.text_field :bank_num, autocomplete: "off", class: 'form-control', required: true
-      %span.help-block
-  %div.form-group.control-group
-    = form.label 'sms_num', class: 'control-label col-sm-2'
-    %div.controls.col-sm-10
-      = form.text_field :sms_num,  class: 'form-control'
-      %span.help-block * 短信接收手机号码，可以和账号相同，也可以不同。
-  %div.form-group.control-group
-    = form.label 'address', class: 'control-label col-sm-2'
-    %div.controls.col-sm-10
-      = form.text_field :address, class: 'form-control'
-      %span.help-block
+%div.form-group.control-group
+  = form.label 'name', class: 'control-label col-sm-2'
+  %div.controls.col-sm-10
+    = form.text_field :name, class: 'form-control', required: true
+    %span.help-block 必填. 最长 255.
+%div.form-group.control-group
+  = form.label 'roles', class: 'control-label col-sm-2'
+  %div.controls.col-sm-10
+    = form.select :role_ids, Role.for_sale.collect {|r| [ r.name, r.id ] }, { prompt: '请选择' }, class: 'form-control', name: "user[role_ids][]", required: true
+    %span.help-block *请您在选择用户类型时，再次确认对应的年费金额，提交成功后，将无法修改。
+%div.form-group.control-group
+  = form.label 'card_num', class: 'control-label col-sm-2'
+  %div.controls.col-sm-10
+    = form.text_field :card_num, autocomplete: "off", class: 'form-control', required: true
+    %span.help-block
+%div.form-group.control-group
+  = form.label 'bank_name', class: 'control-label col-sm-2'
+  %div.controls.col-sm-10
+    = form.text_field :bank_name, class: 'form-control', required: true
+    %span.help-block
+%div.form-group.control-group
+  = form.label 'bank_num', class: 'control-label col-sm-2'
+  %div.controls.col-sm-10
+    = form.text_field :bank_num, autocomplete: "off", class: 'form-control', required: true
+    %span.help-block
+%div.form-group.control-group
+  = form.label 'sms_num', class: 'control-label col-sm-2'
+  %div.controls.col-sm-10
+    = form.text_field :sms_num,  class: 'form-control'
+    %span.help-block * 短信接收手机号码，可以和账号相同，也可以不同。
+%div.form-group.control-group
+  = form.label 'address', class: 'control-label col-sm-2'
+  %div.controls.col-sm-10
+    = form.text_field :address, class: 'form-control'
+    %span.help-block
+- if @user.new_record?
   %div.form-group.control-group
     = form.label 'email', class: 'control-label col-sm-2'
     %div.controls.col-sm-10
       = form.text_field :email, autocomplete: "off", class: 'form-control', email: true
       %span.help-block
-  %div.form-group.control-group
-    = form.label 'notes', class: 'control-label col-sm-2'
-    %div.controls.col-sm-10
-      = form.text_area :notes, class: 'form-control'
-      %span.help-block
-  %div.form-group.form-actions
-    %div.col-sm-offset-2.col-sm-10
-      = form.button t('admin.form.save'), class: 'btn btn-primary'
-      = form.button t('admin.form.cancel'), class: 'btn'
+%div.form-group.control-group
+  = form.label 'notes', class: 'control-label col-sm-2'
+  %div.controls.col-sm-10
+    = form.text_area :notes, class: 'form-control'
+    %span.help-block
+%div.form-group.form-actions
+  %div.col-sm-offset-2.col-sm-10
+    = form.button t('admin.form.save'), class: 'btn btn-primary'
+    = form.button t('admin.form.cancel'), class: 'btn'
 :javascript
   $("#new_user").validate({
     rules: {

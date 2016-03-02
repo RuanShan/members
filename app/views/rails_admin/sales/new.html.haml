@@ -17,4 +17,5 @@
   %br
 %div#step3.step.hide
   %div
-    =render 'form'
+    = form_for @user, url: sales_path(), html: { multipart: true, class: "", data: { title: @page_name } } do |form|
+      =render partial: 'form', locals: { form: form }
