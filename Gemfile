@@ -1,7 +1,7 @@
 source 'https://ruby.taobao.org/'
 
-ruby '2.1.5'
-gem 'rails', '~> 4.1.11'
+ruby '2.2.4'
+gem 'rails', '~> 4.2.5'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
@@ -37,14 +37,14 @@ end
 
 
 gem 'cancancan'
-gem 'devise'
-gem 'rails_admin',   :path => './rails_admin'
+gem 'devise', '~> 3.5.7'
+gem 'rails_admin' #,   :path => './rails_admin'
 
 #gem 'mlb', '~> 0.5'
 gem 'paperclip', '~> 2.4'
-gem 'mini_magick'
-gem 'carrierwave'
-gem 'dragonfly'
+#gem 'mini_magick'
+#gem 'carrierwave'
+#gem 'dragonfly'
 
 
 group :assets do
