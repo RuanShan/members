@@ -1,6 +1,6 @@
 # encoding: utf-8
 #require 'mini_magick'
-class CarrierwaveUploader < CarrierWave::Uploader::Base
+#class CarrierwaveUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or ImageScience support:
   # include CarrierWave::RMagick
@@ -50,4 +50,4 @@ class CarrierwaveUploader < CarrierWave::Uploader::Base
   #   "something.jpg" if original_filename
   # end
 
-end
+#end
