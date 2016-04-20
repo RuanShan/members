@@ -14,5 +14,5 @@ class FieldTest < ActiveRecord::Base
   before_validation { self.paperclip_asset = nil if self.delete_paperclip_asset == '1' }
 
   #image_accessor :dragonfly_asset
-  mount_uploader :carrierwave_asset, CarrierwaveUploader
+  #mount_uploader :carrierwave_asset, CarrierwaveUploader
 end
