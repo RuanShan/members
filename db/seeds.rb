@@ -6,7 +6,7 @@ division_model = RailsAdmin::AbstractModel.new(Division)
 team_model     = RailsAdmin::AbstractModel.new(Team)
 player_model   = RailsAdmin::AbstractModel.new(Player)
 
-[{ name: '卖家(980元/年)', category: 'sale'}].each{|attrs|
+[{ name: '卖家(890元/年)', category: 'sale'}].each{|attrs|
   role = role_model.new( attrs)
   role.save
 }
